@@ -32,14 +32,7 @@ footer{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
-.day-time
-{
-    position: static;
-    text-align: center;
-   
-    list-style: none;
-   
-}
+
 .main-unit{
     font-weight: bold;
     font-size: 24px;
