@@ -1,0 +1,37 @@
+a{
+    text-decoration: none;
+}
+body{
+    border: 2px solid grey;
+    margin: 50px 300px 800px 300px;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+}
+button{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+ul{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    color: grey;
+}
+div, span, footer {
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+}
+
+
+.weather-icon{
+    text-align: center;
+    color: blue;
+    font-size: 48px;
+    display: block;
+}
+
