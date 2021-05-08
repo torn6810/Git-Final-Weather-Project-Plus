@@ -14,7 +14,7 @@ if (minutes<10){
 }
 let displayHour=document.querySelector("#day-time");
 
-displayHour.innerHTML=`${day} ${month} ${date} ${currentHour}:${minutes}`
+displayHour.innerHTML=`${day}, ${month} ${date} ${currentHour}:${minutes}`
 
 function search (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
