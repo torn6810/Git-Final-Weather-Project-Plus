@@ -12,6 +12,7 @@ h1{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     margin: 80px 0px 0px 0px;
+    font-size: 45px;
 }
 footer{
     text-align: center;
@@ -33,6 +34,15 @@ footer{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
+.city-name-display{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: midnightblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
 .temp-reading{
     font-size: 40px;
 }
@@ -52,10 +62,11 @@ footer{
 }
 .local-icon{
     display: inline;
-    font-size: 70px;
+    font-size: 40px;
     margin: 100px 0px 100px 0px;
     color: blue;
 }
+
 .weather-icon{
     text-align: center;
     display: block;
