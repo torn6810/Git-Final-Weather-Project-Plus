@@ -3,7 +3,7 @@ body{
 }
 button{
     color:midnightblue;
-    font-size: 20px;
+    font-size: 15px;
     border: 2px solid midnightblue;
     border-radius: 10px;
 }
@@ -33,7 +33,7 @@ footer{
     padding: 0px 0px 10px 200px;
     color: midnightblue;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 .city-name-display{
     text-align: center;
@@ -60,6 +60,9 @@ footer{
     text-align: center;
     border: 3px solid midnightblue;
     border-radius: 10px;
+    width: 250px;
+    max-height: 30px;
+    font-size: 20px;
 }
 .local-icon{
     display: inline;
