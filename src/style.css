@@ -18,7 +18,7 @@ h1{
 footer{
     text-align: center;
     font-size: 18px;
-    margin: 200px 0px 50px 0px;
+    margin: 100px 0px 50px 0px;
     font-family: 'Montserrat', sans-serif;
     color: midnightblue;
 }
@@ -75,7 +75,7 @@ footer{
     text-align: center;
     display: block;
     font-size: 70px;
-    margin: 100px 0px 100px 0px;
+    margin: 50px 0px 50px 0px;
     color: blue;
 }
 .day{
