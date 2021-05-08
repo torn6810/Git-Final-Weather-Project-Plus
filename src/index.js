@@ -1,6 +1,9 @@
 let now=new Date();
-let days=["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let months=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let day=days[now.getDay()];
+let month=months[now.getMonth()];
+let date=[now.getDate()];
 let currentHour=[now.getHours()];
 if (currentHour<10){
   currentHour=`0${currentHour}`;
@@ -11,7 +14,7 @@ if (minutes<10){
 }
 let displayHour=document.querySelector("#day-time");
 
-displayHour.innerHTML=`${day} ${currentHour}:${minutes}`
+displayHour.innerHTML=`${day} ${month} ${date} ${currentHour}:${minutes}`
 
 function search (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
