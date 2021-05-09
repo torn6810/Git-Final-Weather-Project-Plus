@@ -14,7 +14,7 @@ if (minutes<10){
 }
 let displayHour=document.querySelector("#day-time");
 
-displayHour.innerHTML=`${day}, ${month} ${date} ${currentHour}:${minutes}`
+displayHour.innerHTML=`${currentHour}:${minutes} ${day}, ${month} ${date} `
 
 function searchFahrenheit (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
@@ -42,6 +42,12 @@ function displayWeather(response){
   cityHeading.innerHTML=response.data.name;
   let showTemp=document.querySelector("#current-temp");
   showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
+  let description=document.querySelector("#weather-description");
+  description.innerHTML=response.data.weather.description;
+  let precipitation=document.querySelector("#humidity");
+  precipitation.innerHTML=`Humidity: ${Math.round(response.data.main.humidity)} %`;
+  let windSpeed=document.querySelector("#wind-speed");
+  windSpeed.innerHTML=`Wind Speed: ${Math.round(response.data.wind.speed)} miles/hour`;
 
 }
 
@@ -50,16 +56,11 @@ cityInput.addEventListener("click", searchInput);
 searchFahrenheit ("Seattle");
 
 
+//let fahrenheitTemperature=document.querySelector("#fahrenheit");
+//let celsiusTemperature=document.querySelector("#celsius");
+//fahrenheitTemperature.addEventListener("click", searchFahrenheit (city));
+//celsiusTemperature.addEventListener("click", searchCelsius (city)); 
 
-let fahrenheitTemperature=document.querySelector("#fahrenheit");
-let celsiusTemperature=document.querySelector("#celsius");
-
-  if (fahrenheitTemperature.addEventListener("click"))
-  {searchFahrenheit (city)};
-  if (celsiusTemperature.addEventListener("click"))
-  {
-    searchCelsius (city)
-  };
 
 
 
