@@ -16,25 +16,19 @@ let displayHour=document.querySelector("#day-time");
 
 displayHour.innerHTML=`${currentHour}:${minutes} ${day}, ${month} ${date} `
 
-function searchFahrenheit (city){
+function search (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
   let units="imperial";
   let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
   let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
-function searchCelsius (city){
-  let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
-  let units="metric";
-  let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayWeather);
-}
+
 
 function searchInput(event){
   event.preventDefault();
   let city=document.querySelector("#city-input").value;
-  searchFahrenheit(city);
+  search(city);
   }
 
 function displayWeather(response){
@@ -63,7 +57,7 @@ function displayWeather(response){
 
 let cityInput=document.querySelector("#search-city");
 cityInput.addEventListener("click", searchInput);
-searchFahrenheit ("Seattle");
+search ("Seattle");
 
 
 
@@ -72,7 +66,13 @@ searchFahrenheit ("Seattle");
 //fahrenheitTemperature.addEventListener("click", searchFahrenheit (city));
 //celsiusTemperature.addEventListener("click", searchCelsius (city)); 
 
-
+//function searchCelsius (city){
+  //let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
+  //let units="metric";
+  //let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
+  //let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
+  //axios.get(apiUrl).then(displayWeather);
+//}
 
 
 
