@@ -61,13 +61,16 @@ function searchFahrenheit(event){
   event.preventDefault();
   let temperatureElement=document.querySelector("#current-temp");
   temperatureElement.innerHTML=Math.round(fahrenheitDisplay);
+  fahrenheitLink.classList.add("main-unit");
+  celsiusLink.classList.remove("main-unit");
 }
 function searchCelsius(event){
   event.preventDefault();
   let temperatureElement=document.querySelector("#current-temp");
   let celsiusDisplay=(fahrenheitDisplay-32)*5/9;
   temperatureElement.innerHTML=Math.round(celsiusDisplay);
-  
+  celsiusLink.classList.add("main-unit");
+  fahrenheitLink.classList.remove("main-unit");
 }
 
 let cityInput=document.querySelector("#search-city");
@@ -80,5 +83,11 @@ let fahrenheitTemperature=document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", searchFahrenheit);
 let celsiusTemperature=document.querySelector("#celsius");
 celsiusTemperature.addEventListener("click", searchCelsius); 
+
+let fahrenheitLink=document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", searchFahrenheit);
+let celsiusLink=document.querySelector("#celsius");
+celsiusLink.addEventListener("click", searchCelsius);
+
 
 
