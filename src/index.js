@@ -49,7 +49,7 @@ function displayWeather(response){
   showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
   description.innerHTML=response.data.weather[0].description;
   precipitation.innerHTML=`Humidity: ${Math.round(response.data.main.humidity)} %`;
-  windSpeed.innerHTML=`Wind Speed: ${Math.round(response.data.wind.speed)} miles/hour`;
+  windSpeed.innerHTML=`Wind Speed: ${Math.round(response.data.wind.speed)} m/hour`;
   localIcon.setAttribute(
    "src", 
    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` 
