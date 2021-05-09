@@ -39,6 +39,8 @@ function displayWeather(response){
   let windSpeed=document.querySelector("#wind-speed");
   let localIcon=document.querySelector("#local-icon");
 
+  fahrenheitDisplay=response.data.main.temp;
+
   cityHeading.innerHTML=response.data.name;
   showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
   description.innerHTML=response.data.weather[0].description;
@@ -55,28 +57,28 @@ function displayWeather(response){
   
 }
 
+function searchFahrenheit(event){
+  event.preventDefault();
+  let temperatureElement=document.querySelector("#current-temp");
+  temperatureElement.innerHTML=Math.round(fahrenheitDisplay);
+}
+function searchCelsius(event){
+  event.preventDefault();
+  let temperatureElement=document.querySelector("#current-temp");
+  let celsiusDisplay=(fahrenheitDisplay-32)*5/9;
+  temperatureElement.innerHTML=Math.round(celsiusDisplay);
+  
+}
+
 let cityInput=document.querySelector("#search-city");
 cityInput.addEventListener("click", searchInput);
 search ("Seattle");
 
 
 
-//let fahrenheitTemperature=document.querySelector("#fahrenheit");
-//let celsiusTemperature=document.querySelector("#celsius");
-//fahrenheitTemperature.addEventListener("click", searchFahrenheit (city));
-//celsiusTemperature.addEventListener("click", searchCelsius (city)); 
+let fahrenheitTemperature=document.querySelector("#fahrenheit");
+fahrenheitTemperature.addEventListener("click", searchFahrenheit);
+let celsiusTemperature=document.querySelector("#celsius");
+celsiusTemperature.addEventListener("click", searchCelsius); 
 
-//function searchCelsius (city){
-  //let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
-  //let units="metric";
-  //let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
-  //let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
-  //axios.get(apiUrl).then(displayWeather);
-//}
-
-
-
-//let humidity = weather[city].humidity;
-//let celsiusTemperature = Math.round(temperature);
-//let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
 
