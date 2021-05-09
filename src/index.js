@@ -16,20 +16,25 @@ let displayHour=document.querySelector("#day-time");
 
 displayHour.innerHTML=`${day}, ${month} ${date} ${currentHour}:${minutes}`
 
-function search (city){
+function searchFahrenheit (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
   let units="imperial";
   let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
   let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
-
+function searchCelsius (city){
+  let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
+  let units="metric";
+  let apiEndpoint="https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl=`${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
+}
 
 function searchInput(event){
   event.preventDefault();
   let city=document.querySelector("#city-input").value;
-  search(city);
-  
+  searchFahrenheit(city);
   }
 
 function displayWeather(response){
@@ -39,7 +44,27 @@ function displayWeather(response){
   showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
 
 }
+
 let cityInput=document.querySelector("#search-city");
 cityInput.addEventListener("click", searchInput);
+searchFahrenheit ("Seattle");
 
-search ("Seattle");
+
+
+let fahrenheitTemperature=document.querySelector("#fahrenheit");
+let celsiusTemperature=document.querySelector("#celsius");
+
+  if (fahrenheitTemperature.addEventListener("click"))
+  {searchFahrenheit (city)};
+  if (celsiusTemperature.addEventListener("click"))
+  {
+    searchCelsius (city)
+  };
+
+
+
+
+//let humidity = weather[city].humidity;
+//let celsiusTemperature = Math.round(temperature);
+//let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+
