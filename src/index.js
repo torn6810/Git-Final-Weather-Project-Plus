@@ -39,16 +39,24 @@ function searchInput(event){
 
 function displayWeather(response){
   let cityHeading=document.querySelector("#city-country");
-  cityHeading.innerHTML=response.data.name;
   let showTemp=document.querySelector("#current-temp");
-  showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
   let description=document.querySelector("#weather-description");
-  description.innerHTML=response.data.weather[0].description;
   let precipitation=document.querySelector("#humidity");
-  precipitation.innerHTML=`Humidity: ${Math.round(response.data.main.humidity)} %`;
   let windSpeed=document.querySelector("#wind-speed");
+  let localIcon=document.querySelector("#local-icon");
+
+  cityHeading.innerHTML=response.data.name;
+  showTemp.innerHTML=`${Math.round(response.data.main.temp)}`; 
+  description.innerHTML=response.data.weather[0].description;
+  precipitation.innerHTML=`Humidity: ${Math.round(response.data.main.humidity)} %`;
   windSpeed.innerHTML=`Wind Speed: ${Math.round(response.data.wind.speed)} miles/hour`;
-console.log(response.data)
+  localIcon.setAttribute(
+   "src", 
+   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` 
+  );
+  console.log(response.data)
+ 
+  
 }
 
 let cityInput=document.querySelector("#search-city");
