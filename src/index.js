@@ -14,7 +14,7 @@ if (minutes<10){
 }
 let displayHour=document.querySelector("#day-time");
 
-displayHour.innerHTML=`${currentHour}:${minutes} ${day}, ${month} ${date} `
+displayHour.innerHTML=`${day}, ${month} ${date}, ${currentHour}:${minutes}`
 
 function search (city){
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
@@ -30,6 +30,35 @@ function searchInput(event){
   let city=document.querySelector("#city-input").value;
   search(city);
   }
+
+function displayForecast (){
+  let forecast=document.querySelector("#forecast");
+  forecast.innerHTML="Forecast";
+  let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML=`<div class="row">`;
+  days.forEach(function(day){
+    forecastHTML=
+    forecastHTML+
+    `
+    <div class="col day">
+                ${day}
+
+        <div>
+            <i class="fas fa-cloud-sun weather-icon"></i>
+
+              <div class="weather-forecast-temp">
+                
+                  <span class="weather-forecast-temp-high">H: 69°F</span> 
+                    <br/>
+                  <span class="weather-forecast-temp-low">L: 41°F</span> 
+              </div>
+        </div>
+    </div>      
+    `;
+  });
+  forecastHTML=forecastHTML+`</div>`;
+  forecast.innerHTML=forecastHTML;
+}  
 
 function displayWeather(response){
   let cityHeading=document.querySelector("#city-country");
@@ -76,7 +105,7 @@ function searchCelsius(event){
 let cityInput=document.querySelector("#search-city");
 cityInput.addEventListener("click", searchInput);
 search ("Seattle");
-
+displayForecast();
 
 
 let fahrenheitTemperature=document.querySelector("#fahrenheit");
