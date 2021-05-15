@@ -34,6 +34,9 @@ footer{
     color: midnightblue;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
+    
+}
+.weather-description{
     text-transform: capitalize;
 }
 .city-name-display{
