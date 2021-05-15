@@ -31,7 +31,8 @@ function searchInput(event){
   search(city);
   }
 
-function displayForecast (){
+function displayForecast (response){
+  
   let forecast=document.querySelector("#forecast");
   forecast.innerHTML="Forecast";
   let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
@@ -60,6 +61,15 @@ function displayForecast (){
   forecast.innerHTML=forecastHTML;
 }  
 
+function getForecastWeather(coordinates){
+  
+  let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
+  let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
 function displayWeather(response){
   let cityHeading=document.querySelector("#city-country");
   let showTemp=document.querySelector("#current-temp");
@@ -79,11 +89,9 @@ function displayWeather(response){
    "src", 
    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` 
   );
-  localIcon.setAttribute(
-    "alt", 
-    response.data.weather[0].description
+  localIcon.setAttribute("alt", response.data.weather[0].description
   );
-  
+  getForecastWeather(response.data.coord);
 }
 
 function searchFahrenheit(event){
@@ -105,7 +113,7 @@ function searchCelsius(event){
 let cityInput=document.querySelector("#search-city");
 cityInput.addEventListener("click", searchInput);
 search ("Seattle");
-displayForecast();
+
 
 
 let fahrenheitTemperature=document.querySelector("#fahrenheit");
