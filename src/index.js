@@ -24,12 +24,19 @@ function search (city){
   axios.get(apiUrl).then(displayWeather);
 }
 
-
 function searchInput(event){
   event.preventDefault();
   let city=document.querySelector("#city-input").value;
   search(city);
   }
+
+function formatForecastDay(timestamp){
+let date=new Date(timestamp *1000);
+let day=date.getDay();
+let days=["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+return days[day];
+}
+
 
 function displayForecast (response){
   console.log(response);
@@ -38,17 +45,18 @@ function displayForecast (response){
   forecast.innerHTML="Forecast";
   //let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML=`<div class="row">`;
-  dailyForecast.forEach(function(forecastDay){
+  dailyForecast.forEach(function(forecastDay, index){
+    if (index<7){
     forecastHTML=
     forecastHTML+
     `
     <div class="col day">
-                ${forecastDay.dt}
+                ${formatForecastDay(forecastDay.dt)}
         <div class="weather-icon">
             <img 
             src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             alt="daily forecast weather icons"
-            width="42" 
+            width="75" 
             />
               <div class="weather-forecast-temp">
                 
@@ -59,6 +67,7 @@ function displayForecast (response){
         </div>
     </div>      
     `;
+  }
   });
   forecastHTML=forecastHTML+`</div>`;
   forecast.innerHTML=forecastHTML;
