@@ -39,7 +39,6 @@ return days[day];
 
 
 function displayForecast (response){
-  console.log(response);
   let dailyForecast=response.data.daily;
   let forecast=document.querySelector("#forecast");
   forecast.innerHTML="Forecast";
@@ -77,7 +76,6 @@ function getForecastWeather(coordinates){
   
   let apiKey="1a865f34c72d6db62ee55e7dce90a4b3";
   let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
