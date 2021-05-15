@@ -32,26 +32,29 @@ function searchInput(event){
   }
 
 function displayForecast (response){
-  
+  console.log(response);
+  let dailyForecast=response.data.daily;
   let forecast=document.querySelector("#forecast");
   forecast.innerHTML="Forecast";
-  let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  //let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML=`<div class="row">`;
-  days.forEach(function(day){
+  dailyForecast.forEach(function(forecastDay){
     forecastHTML=
     forecastHTML+
     `
     <div class="col day">
-                ${day}
-
-        <div>
-            <i class="fas fa-cloud-sun weather-icon"></i>
-
+                ${forecastDay.dt}
+        <div class="weather-icon">
+            <img 
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+            alt="daily forecast weather icons"
+            width="42" 
+            />
               <div class="weather-forecast-temp">
                 
-                  <span class="weather-forecast-temp-high">H: 69°F</span> 
+                  <span class="weather-forecast-temp-high">H: ${Math.round(forecastDay.temp.max)}°F</span> 
                     <br/>
-                  <span class="weather-forecast-temp-low">L: 41°F</span> 
+                  <span class="weather-forecast-temp-low">L: ${Math.round(forecastDay.temp.min)}°F</span> 
               </div>
         </div>
     </div>      
