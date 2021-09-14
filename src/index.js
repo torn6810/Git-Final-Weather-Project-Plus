@@ -42,7 +42,6 @@ function displayForecast (response){
   let dailyForecast=response.data.daily;
   let forecast=document.querySelector("#forecast");
   forecast.innerHTML="Forecast";
-  //let days=["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML=`<div class="row">`;
   dailyForecast.forEach(function(forecastDay, index){
     if (index<7){
