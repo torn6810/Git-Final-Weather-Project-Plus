@@ -6,6 +6,7 @@ button{
     border-radius: 10px;
     color:midnightblue;
     font-size: 15px;
+    margin: 10px 0px;
 }
 footer{
     color: midnightblue;
@@ -18,9 +19,37 @@ h1{
     color:midnightblue;
     font-family: 'Montserrat', sans-serif;
     font-size: 45px;
-    margin: 30px 0px 0px 0px;
+    font-weight: 800;
+    margin: 90px 0px 0px 0px;
     text-align: center;
     text-decoration: underline;
+}
+.city{
+    border: 3px solid midnightblue;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+    margin: 0px 500px 0px 0px;
+    max-height: 30px;
+    text-align: center;
+    width: 250px;
+}
+
+.day{
+    border: 2px solid midnightblue;
+    border-radius: 40px;
+    color: royalblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0px 5px;
+    padding: 20px 5px 5px 5px;
+    text-align: center;
+}
+.local-icon{
+    color: blue;
+    display: inline;
+    font-size: 40px;
+    margin: 100px 0px 100px 0px;
 }
 .local-info{
     color: midnightblue;
@@ -34,21 +63,6 @@ h1{
     text-align: right;
     top: 0;
 }
-.weather-description{
-    text-transform: capitalize;
-}
-.city-name-display{
-    color: midnightblue;
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    margin: 0 auto;
-    text-align: center;
-}
-.temp-reading{
-    font-size: 40px;
-}
 .main-unit{
     color: midnightblue;
     cursor: default;
@@ -61,38 +75,11 @@ h1{
 .second-unit{
     font-size: 16px;
 }
-.city{
-    border: 3px solid midnightblue;
-    border-radius: 10px;
-    font-size: 20px;
-    display: block;
-    margin: 0px 500px 0px 0px;
-    max-height: 30px;
-    text-align: center;
-    width: 250px;
-}
-.local-icon{
-    color: blue;
-    display: inline;
+.temp-reading{
     font-size: 40px;
-    margin: 100px 0px 100px 0px;
 }
-.weather-icon{
-    color: blue;
-    display: block;
-    font-size: 70px;
-    margin: 10px 0px 25px 0px;
-    text-align: center;
-}
-.day{
-    border: 2px solid midnightblue;
-    border-radius: 40px;
-    color: royalblue;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    margin: 0px 5px;
-    padding: 20px 5px 5px 5px;
-    text-align: center;
+.weather-description{
+    text-transform: capitalize;
 }
 .weather-forecast-temp{
     border: 1px solid midnightblue;
@@ -102,5 +89,12 @@ h1{
     font-size: 14px;
     margin: 0px 5px;
     padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+.weather-icon{
+    color: blue;
+    display: block;
+    font-size: 70px;
+    margin: 10px 0px 25px 0px;
     text-align: center;
 }

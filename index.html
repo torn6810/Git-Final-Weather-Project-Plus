@@ -14,21 +14,24 @@
 </head>
 <body>
     <div class="container">
-    <h1>
-        Weather
+    <h1 class="city-name-display" id="city-country">
+        Seattle
     </h1>
-    <h2>
+    <div class="row">
+        
+        <div class="col-6">
+    
         <input type="text" class="city" placeholder="Enter a City" id="city-input"/>
-    </h2>
-    <div>
+    
+        
         <button id=search-city>
         Search
         </button>
-        <span class="city-name-display" id="city-country">
-            Portland></span>
-    </div>
+        
+        </div>
+        
     
-    <p>
+    <div class="col-6">
     <ul class="local-info">
         <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="local weather icon" id="local-icon">
         
@@ -59,10 +62,12 @@
        
         
     </ul>
+    </div>
+</div>
     <div class="weather-forecast" id="forecast">
-    
-    </p>
-    
+
+
+
 </div>
 <footer>
     <a href="https://github.com/torn6810/Git-Final-Weather-Project-Plus" target=_blank>Open-source code</a>
