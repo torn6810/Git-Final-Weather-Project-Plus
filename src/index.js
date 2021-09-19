@@ -101,7 +101,6 @@ function displayWeather(response){
   localIcon.setAttribute("alt", response.data.weather[0].description
   );
   getForecastWeather(response.data.coord);
-  console.log(response);
 }
 
 let cityInput=document.querySelector("#search-city");
