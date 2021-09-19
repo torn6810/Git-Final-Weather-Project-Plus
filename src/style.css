@@ -25,33 +25,34 @@ h1{
     text-align: center;
     text-decoration: underline;
 }
+
 .city{
-    border: 3px solid midnightblue;
+    border: 2px solid midnightblue;
     border-radius: 10px;
-    font-family: 'Montserrat Alternates', sans-serif;;
-    font-size: 20px;
     display: block;
+    font-family: 'Montserrat Alternates', sans-serif;;
+    font-size: 16px;
     margin: 0px 500px 0px 0px;
     max-height: 30px;
     text-align: center;
     width: 250px;
 }
 .container{
-    background-color: whitesmoke;
-    border: 3px solid mediumorchid;
-    border-radius: 25px;
+    background-color: white;
+    border: 1px solid mediumorchid;
+    border-radius: 10px;
+    margin: 80px auto;
     padding: 20px;
 }
 
 .day{
-    
     color: midnightblue;
-    text-decoration: underline;
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 25px;
     margin: 0px 5px;
     padding: 20px 5px 5px 5px;
     text-align: center;
+    text-decoration: none;
 }
 .local-icon{
     color: blue;
@@ -66,7 +67,7 @@ h1{
     list-style: none;
     margin: 0px 0px 10px 100px;
     padding: 0px 0px 10px 200px;
-    position:static;
+    position: static;
     right: 0;
     text-align: right;
     top: 0;
